@@ -1,12 +1,11 @@
 class Animal:
-    alive = True  # живой или не живой
-    fed = False  # голодный или сытый
+    alive = True  
+    fed = False 
 
     def __init__(self, name):
         self.name = name
 
-
-    def eat(self, food): # Результат поедания чего ли-бо
+    def eat(self, food):
         if food.edible:
             print(f"{self.name} съел {food.name}")
             self.fed = True
@@ -17,10 +16,8 @@ class Animal:
 class Plant:
     def __init__(self, name):
         self.name = name
-        self.edible = False  # съедобное или не съедобное
+        self.edible = False 
 
-
-# Определение классов-наследников для Animal
 class Mammal(Animal):
     def __init__(self, name):
         super().__init__(name)
@@ -29,8 +26,6 @@ class Predator(Animal):
     def __init__(self, name):
         super().__init__(name)
 
-
-# Определение классов-наследников для Plant
 class Flower(Plant):
     def __init__(self, name):
         super().__init__(name)
@@ -41,13 +36,11 @@ class Fruit(Plant):
         super().__init__(name)
         self.edible = True
 
-# Создание объектов
 a1 = Predator('Волк с Уолл-Стрит')
 a2 = Mammal('Хатико')
 p1 = Flower('Цветик семицветик')
 p2 = Fruit('Заводной апельсин')
 
-# Вывод информации и тестирование методов
 print(a1.name)
 print(p1.name)
 
